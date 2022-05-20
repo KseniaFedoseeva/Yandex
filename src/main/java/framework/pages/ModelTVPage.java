@@ -20,7 +20,7 @@ public class ModelTVPage extends BasePage {
             private WebElement btn;
 
     String count = "48";
-    String title = number.getText();
+   public String title = number.getAttribute("title");
 
     public ModelTVPage checkCount(){
         Assert.assertEquals("Просмотрено не верно количество", count, number);
