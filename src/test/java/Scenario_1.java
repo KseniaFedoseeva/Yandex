@@ -14,7 +14,10 @@ public class Scenario_1 extends BaseTests {
                .clickOnAllFilters()
                .sendPrice()
                .checkBrand()
-               .clickButton();
+               .clickButton()
+               .checkCount()
+               .putValueToSearch()
+               .clickBtn();
 
 
 

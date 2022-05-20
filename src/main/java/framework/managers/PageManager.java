@@ -33,6 +33,8 @@ public class PageManager {
 
     private ModelTVPage modelTVPage;
 
+    private SearchResult searchResult;
+
 
 
     /**
@@ -117,6 +119,13 @@ public class PageManager {
             modelTVPage = new ModelTVPage();
         }
         return modelTVPage;
+    }
+
+    public SearchResult getSearchResult(){
+        if (searchResult == null) {
+            searchResult = new SearchResult();
+        }
+        return searchResult;
     }
 
     /**
