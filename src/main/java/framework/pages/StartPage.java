@@ -1,6 +1,8 @@
 package framework.pages;
 
+import framework.managers.DriverManager;
 import io.qameta.allure.Step;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,7 +13,8 @@ public class StartPage extends BasePage {
 
     @Step("Переход в маркет")
     public MarketPage goToMarketPage(){
-        iconMarket.click();
+      iconMarket.click();
+
 
         return pageManager.getGoToMarketPage();
     }

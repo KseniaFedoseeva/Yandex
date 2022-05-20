@@ -11,7 +11,7 @@ public class AllureListener extends AllureJunit4 {
     @Override
     public void testFailure (final Failure failure){
 
-        byte[] byteImage =  ((TakesScreenshot) DriverManager.getDriverManager()).getScreenshotAs(OutputType.BYTES);
+        byte[] byteImage =  ((TakesScreenshot) DriverManager.getDriverManager().getDriver()).getScreenshotAs(OutputType.BYTES);
         getLifecycle().addAttachment("Screenshot", "imag/png", null, byteImage);
         super.testFailure(failure);
 

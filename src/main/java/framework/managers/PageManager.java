@@ -1,11 +1,9 @@
 package framework.managers;
 
-import framework.pages.StartPage;
-import framework.pages.MarketPage;
-import framework.pages.ElectronikaPage;
-import framework.pages.TVPage;
-import framework.pages.SearchPage;
-import framework.pages.ModelTVPage;
+import framework.pages.*;
+
+import java.util.ArrayList;
+import java.util.Set;
 
 
 /**
@@ -28,6 +26,14 @@ public class PageManager {
     private MarketPage goToMarketPage;
 
     private ElectronikaPage goToElectronikaPage;
+
+    private TVPage goTVPage;
+
+    private SearchPage searchPage;
+
+    private ModelTVPage modelTVPage;
+
+
 
     /**
      * Страничка командировок
@@ -81,6 +87,7 @@ public class PageManager {
         if (goToMarketPage == null) {
             goToMarketPage = new MarketPage();
         }
+//
         return goToMarketPage;
     }
 
@@ -89,6 +96,27 @@ public class PageManager {
             goToElectronikaPage = new ElectronikaPage();
         }
         return goToElectronikaPage;
+    }
+
+    public TVPage getGoTVPage(){
+        if (goTVPage == null) {
+            goTVPage = new TVPage();
+        }
+        return goTVPage;
+    }
+
+    public SearchPage getSearchPage(){
+        if (searchPage == null) {
+            searchPage = new SearchPage();
+        }
+        return searchPage;
+    }
+
+    public ModelTVPage getModelsTV(){
+        if (modelTVPage == null) {
+            modelTVPage = new ModelTVPage();
+        }
+        return modelTVPage;
     }
 
     /**

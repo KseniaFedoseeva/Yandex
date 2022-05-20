@@ -1,5 +1,6 @@
 package framework.pages;
 
+import framework.managers.DriverManager;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,11 +15,11 @@ public class MarketPage extends BasePage {
 
     @Step("Переход в каталог")
     public MarketPage goToCatalog(){
+
         waitUtilElementToBeVisible(catalog);
         waitUtilElementToBeClickable(catalog);
-        action.moveToElement(catalog).perform();
-        action.click(catalog);
-      return this;
+       catalog.click();
+       return this;
 
     }
 
@@ -27,5 +28,6 @@ public class MarketPage extends BasePage {
      elektronika.click();
      return pageManager.getGoToElectronikaPage();
     }
+
 
 }
