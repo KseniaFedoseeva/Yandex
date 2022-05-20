@@ -33,7 +33,7 @@ public class ModelTVPage extends BasePage {
         searchLink.sendKeys(title);
         return this;
     }
-
+// Переход к результатам поиска
     public SearchResult clickBtn(){
         btn.click();
         return pageManager.getSearchResult();
