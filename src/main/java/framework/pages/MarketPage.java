@@ -15,6 +15,11 @@ public class MarketPage extends BasePage {
 
     @Step("Переход в каталог")
     public MarketPage goToCatalog(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         waitUtilElementToBeVisible(catalog);
         waitUtilElementToBeClickable(catalog);
@@ -25,6 +30,11 @@ public class MarketPage extends BasePage {
 
     @Step ("Переход в раздел Электроника")
     public ElectronikaPage goToElectronika(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
      elektronika.click();
      return pageManager.getGoToElectronikaPage();
     }

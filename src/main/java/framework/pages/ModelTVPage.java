@@ -23,12 +23,22 @@ public class ModelTVPage extends BasePage {
    public String title = number.getAttribute("title");
 
     public ModelTVPage checkCount(){
-        Assert.assertEquals("Просмотрено не верно количество", count, number);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Assert.assertEquals("Просмотрено не верное количество", count, number);
         return this;
     }
 
 
     public ModelTVPage putValueToSearch(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         searchLink.click();
         searchLink.sendKeys(title);
         return this;

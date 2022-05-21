@@ -7,7 +7,8 @@ public class Scenario_1 extends BaseTests {
     @Test
     public  void firstTest() {
 
-       app.getGoToMarketPage()
+       app.getStartPage()
+               .goToMarketPage()
                .goToCatalog()
                .goToElectronika()
                .clickOnTVPage()

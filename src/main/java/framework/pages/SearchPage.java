@@ -24,12 +24,24 @@ public class SearchPage extends BasePage{
     }
 
     public SearchPage checkBrand(){
-        lg.click();
-        samsung.click();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        action.moveToElement(lg);
+        action.click(lg).perform();
+       action.moveToElement(samsung);
+       action.click(samsung).perform();
         return this;
     }
 
     public ModelTVPage clickButton(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         button.click();
         return pageManager.getModelsTV();
     }
