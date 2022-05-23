@@ -18,21 +18,18 @@ public class SearchPage extends BasePage{
     private WebElement button;
 
     public SearchPage sendPrice(){
+
         price.click();
         price.sendKeys("20000");
         return this;
     }
 
     public SearchPage checkBrand(){
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         action.moveToElement(lg);
-        action.click(lg).perform();
-       action.moveToElement(samsung);
-       action.click(samsung).perform();
+        action.click(lg);
+        action.moveToElement(samsung);
+        action.click(samsung);
         return this;
     }
 
