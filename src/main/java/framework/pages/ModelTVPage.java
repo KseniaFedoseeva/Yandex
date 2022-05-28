@@ -43,8 +43,9 @@ public class ModelTVPage extends BasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+       String h = firstMember.getAttribute("title");
         searchLink.click();
-        searchLink.sendKeys(firstMember.getAttribute("title"));
+        searchLink.sendKeys(h);
         return this;
     }
 // Переход к результатам поиска
