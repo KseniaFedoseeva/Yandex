@@ -10,7 +10,7 @@ public class ModelTVPage extends BasePage {
     @FindBy(xpath = "//div[text() = '48']")
     private WebElement number;
 
-    @FindBy(xpath = "//div[@data-index = '1']")
+    @FindBy(xpath = "//a[@data-node-id = 'mcsb1d']")
             private WebElement firstMember;
 
     @FindBy(xpath = "//input[@id = 'header-search']")
@@ -20,7 +20,8 @@ public class ModelTVPage extends BasePage {
             private WebElement btn;
 
     String count = "48";
-   public String title = number.getAttribute("title");
+    String num;
+  // public String title = number.getAttribute("title");
 
     public ModelTVPage checkCount(){
         try {
@@ -28,7 +29,10 @@ public class ModelTVPage extends BasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Assert.assertEquals("Просмотрено не верное количество", count, number);
+        if (number.getText().contains("48")){
+          num = "48";
+        }
+        Assert.assertEquals("Просмотрено не верное количество", count, num);
         return this;
     }
 
@@ -40,7 +44,7 @@ public class ModelTVPage extends BasePage {
             e.printStackTrace();
         }
         searchLink.click();
-        searchLink.sendKeys(title);
+        searchLink.sendKeys(firstMember.getAttribute("title"));
         return this;
     }
 // Переход к результатам поиска

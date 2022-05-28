@@ -5,7 +5,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class SearchPage extends BasePage{
 
-    @FindBy(xpath = "/html/body/div[3]/section/div[2]/div/div/div[2]/div[1]/div[4]/div/div/div/div[1]/input")
+    @FindBy(xpath = "/html/body/div[3]/section/div[2]/div/div/div[2]/div[1]/div[1]/div/div/div/div[1]/input")
+
     private WebElement price;
 
     @FindBy(xpath = "//div[text()='LG']")
@@ -25,11 +26,11 @@ public class SearchPage extends BasePage{
     }
 
     public SearchPage checkBrand(){
-
-        action.moveToElement(lg);
         action.click(lg);
-        action.moveToElement(samsung);
         action.click(samsung);
+
+//        action.moveToElement(lg).click(lg).perform();
+//        action.moveToElement(samsung).click(samsung).perform();
         return this;
     }
 
